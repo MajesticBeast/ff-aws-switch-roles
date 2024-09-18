@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 250px;
+            padding: 10px;
+        }
+
+        input {
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        .account-list {
+            max-height: 200px;
+            overflow-y: auto;
+            /* Scrollable list */
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .account-item {
+            margin-bottom: 5px;
+        }
+
+        button {
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>AWS Switch Role</h3>
+    <a
+        href="https://signin.aws.amazon.com/switchrole?account=347267726584&roleName=CloudAdmin&displayName=CloudAdmin"></a>
+    <form id="roleForm">
+        <input type="text" id="accountName" placeholder="Account Name" required />
+        <input type="text" id="accountNumber" placeholder="Account Number" required />
+        <input type="text" id="roleName" placeholder="Role Name" required />
+        <button type="submit">Save</button>
+    </form>
+    <div class="account-list" id="accountList">
+        <!-- Stored accounts will be listed here -->
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
