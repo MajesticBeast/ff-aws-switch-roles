@@ -5,44 +5,81 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            width: 250px;
+            width: 275px;
+            height: 500px;
             padding: 10px;
+            background-color: #e4eeffec; /* Dark Slate Blue */
+            color: #1e1e1e; /* Off white text color */
         }
 
         input {
             width: 100%;
-            margin: 5px 0;
+            margin: 8px 0;
+            border: none;
+            border-bottom: 2px solid #F5F5F5; /* Off white bottom border */
+            background-color: transparent;
+            color: #1e1e1e; /* Off white text color */
+        }
+
+        input:focus {
+            outline: none; /* Remove focus outline */
         }
 
         .account-list {
-            max-height: 200px;
+            font: .9em sans-serif;
+            max-height: 90%;
             overflow-y: auto;
             /* Scrollable list */
             border: 1px solid #ccc;
             padding: 5px;
+            background-color: #e4eeffec; /* Dark Slate Blue */
+            color: #1e1e1e; /* Off white text color */
         }
 
         .account-item {
             margin-bottom: 5px;
         }
 
-        button {
-            margin-top: 5px;
-            cursor: pointer;
+        .account-details {
+            list-style-type: none;
+            padding: 8px;
+            border-bottom: 1px solid #ccc; /* Add bottom border */
+        }
+
+        button:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+        button:hover {
+            background-color: #3700B3; /* Darker Material Design Purple */
+        }
+
+        .material-button {
+            display: inline-block;
+            text-decoration: none;
+            font: 0.70em sans-serif;
+            background-color: #006fee; /* Material Design Purple */
+            color: #FFFFFF; /* White text */
+            padding: 4px 50px;
+            margin-top: 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .material-button:hover {
+            background-color: #3700B3; /* Darker Material Design Purple */
+        }
+
+        .material-button:focus {
+            outline: none; /* Remove focus outline */
         }
     </style>
 </head>
 
 <body>
     <h3>AWS Switch Role</h3>
-    <a
-        href="https://signin.aws.amazon.com/switchrole?account=347267726584&roleName=CloudAdmin&displayName=CloudAdmin"></a>
-    <form id="roleForm">
-        <input type="text" id="accountName" placeholder="Account Name" required />
-        <input type="text" id="accountNumber" placeholder="Account Number" required />
-        <input type="text" id="roleName" placeholder="Role Name" required />
-        <button type="submit">Save</button>
-    </form>
     <div class="account-list" id="accountList">
         <!-- Stored accounts will be listed here -->
     </div>

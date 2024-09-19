@@ -1,17 +1,23 @@
 {
     "manifest_version": 2,
-    "name": "AWS Switch Role Helper",
+    "name": "AWS Switch Role",
     "version": "1.0",
-    "description": "Store AWS account numbers and names to easily switch roles.",
+    "description": "Switch AWS roles easily.",
     "permissions": [
-        "storage",
-        "activeTab"
+        "storage"
     ],
-    "icons": {
-        "48": "icons/icon.png"
-    },
     "browser_action": {
-        "default_popup": "popup.html",
-        "default_icon": "icons/icon.png"
-    }
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "web_accessible_resources": [
+        "libs/yaml.min.js"
+      ],
+    "icons": {
+        "48": "icons/icon-48.png"
+    },
+    "content_security_policy": "script-src 'self'; object-src 'self'"
 }
